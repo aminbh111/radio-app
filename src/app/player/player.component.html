@@ -1,0 +1,24 @@
+<vg-player style="height: 50px;position: fixed;bottom: 0px;" [ngStyle]="{'height':expand ? '150px' : '50px' }">
+    <div style="height: 80px;">
+
+        <ul style="height: 100%;overflow: auto;width: 100%;">
+            <li  *ngFor="let programme of programmes" >{{programme.time+' : '+programme.programme}}</li>
+        </ul>
+    </div>
+    <vg-controls style="background:rgb(63,65,68);">
+      <vg-play-pause></vg-play-pause>
+      <vg-playback-button></vg-playback-button>
+
+      <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+        <div style="color: white;display: inherit;margin-left: 50px;"><img [src]="radiostation.img" style="height: 40px;border-radius: 40px;border:5px white solid"><span style="margin-left: 50px;font-size:20px;line-height: 50px;display: inline-block;vertical-align: middle;">{{radiostation.name}}</span></div>
+
+      <vg-mute style="right:0px;position:absolute;" ></vg-mute>
+
+        <button (click)="getRadioStationProgrammes(radiostation)">^</button>
+    </vg-controls>
+
+    <audio #media [vgMedia]="media" id="myAudio" preload="auto" autoplay [src]="radiostation.link" type="audio/mpeg">
+    </audio>
+  </vg-player>
+

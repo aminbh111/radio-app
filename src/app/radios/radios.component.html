@@ -1,0 +1,10 @@
+
+<ngx-slick-carousel class="carousel"
+                    #slickModal="slick-carousel"
+                    [config]="slideConfig"
+                 >
+  <app-radio ngxSlickItem *ngFor="let radio of radios" class="slide" [radioData]="radio" (click)="setRadioStation(radio)">
+
+  </app-radio>
+
+</ngx-slick-carousel>

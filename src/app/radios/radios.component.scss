@@ -1,0 +1,22 @@
+ngx-slick-carousel{
+  margin: auto;
+  width: 80%;
+  height: 170px;
+  background: white;
+  border-radius: 30px;
+  .slick-dots li.slick-active button:before {
+    color: #fff;
+  }
+
+  app-radio{
+
+      cursor: default;
+      text-decoration: none;
+      color: black;
+
+  }
+
+  *:focus {
+    outline: 0;
+  }
+}
